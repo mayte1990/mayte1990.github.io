@@ -1,0 +1,18 @@
+.icon {
+	display: inline-block;
+	color: #444444;
+	fill: currentColor;
+	stroke:currentColor;
+}
+.icon-clock {
+	width: 27px;
+	height: 32px;
+}
+#icon-clock .path1 {
+	fill: #fff;
+	stroke:#fff;
+}
+#icon-clock .path2 {
+	fill: #fff;
+	stroke:#fff;
+}
