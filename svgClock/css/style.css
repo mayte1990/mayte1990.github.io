@@ -1,0 +1,27 @@
+#holder {
+    height: 480px;
+    left: 50%;
+    margin: -240px 0 0 -320px;
+    position: absolute;
+    top: 50%;
+    width: 640px;
+}
+#holder {
+    height: 600px;
+    margin: -300px 0 0 -300px;
+    width: 600px;
+}
+#img{
+  position: absolute;
+  top:6px;
+  left:7px;
+}
+<![CDATA[
+.strokeCss{
+  stroke-width:2;
+  stroke:'blue';
+}
+]]>
+
+/*common*/
+.bblue{body{background-color: #015B7E;}}

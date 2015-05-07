@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>singleton</title>
+</head>
+<body>
+	<p id="mm"></p>
+</body>
+<script type="text/javascript">
+;!function(){
+	'use strict';
+
+	var Cal = (function(my){
+
+		my.add = function(eq){
+			var eqC = document.getElementById(eq)
+			eqC.innerHTML = "太爱你";
+		}
+
+		return my;
+	}(Cal||{}));
+
+	Cal.add('mm');
+
+}();
+</script>
+</html>
