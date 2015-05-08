@@ -89,7 +89,25 @@
 				Psub.prototype = Oal.prototype;
 				var pp2 = new Psub();
 				pp2.subadd(pp2.add('dd',"哈根达斯"),pp2.u);//不可以访问父类的属性变量，只能访问父类的prototype内容
+				
+				Psub.prototype.add = function(eq,str){ //重写与父类相同名称的方法
+					var eqC = document.getElementById(eq);
+					eqC.innerHTML = eqC.innerHTML+'~Psu~add~fun~';
+				}
+				var pp3 = new Psub();
+				pp3.add('ee','倒数活动咯~');
 
+				//对比私有属性和原型调用优先级
+				function foo(){
+					this.add = function(x,y){
+						alert(x+","+y+"---this fun");
+					}
+				}
+				foo.prototype.add = function(x,y){
+					alert(x+y+"---prototype");
+				}
+				var f = new foo();
+				f.add(1,3); //1,3---this fun 说明函数私有属性的方法会比原型里面方法调用优先级高
 
 			}();
 		</pre>
@@ -101,6 +119,7 @@
 		<span id="bb"></span><br>
 		<span id="cc"></span><br>
 		<span id="dd"></span><br>
+		<span id="ee"></span><br>
 	</div>
 </body>
 <script type="text/javascript">
@@ -175,9 +194,28 @@
 	var pp = new Psub();
 	pp.subadd(pp.add('dd',"简氏别墅"),pp.u);//依旧可以访问父类的属性变量
 
-	Psub.prototype = Oal.prototype;
+	Psub.prototype = Oal.prototype;//实例的原型指向父类的原型
 	var pp2 = new Psub();
 	pp2.subadd(pp2.add('dd',"哈根达斯"),pp2.u);//不可以访问父类的属性变量，只能访问父类的prototype内容
+
+	Psub.prototype.add = function(eq,str){ //重写与父类相同名称的方法
+		var eqC = document.getElementById(eq);
+		eqC.innerHTML = eqC.innerHTML+'~Psu~add~fun~';
+	}
+	var pp3 = new Psub();
+	pp3.add('ee','倒数活动咯~');
+
+	//对比私有属性和原型调用优先级
+	function foo(){
+		this.add = function(x,y){
+			alert(x+","+y+"---this fun");
+		}
+	}
+	foo.prototype.add = function(x,y){
+		alert(x+y+"---prototype");
+	}
+	var f = new foo();
+	f.add(1,3); //1,3---this fun 说明函数私有属性的方法会比原型里面方法调用优先级高
 
 
 }();
