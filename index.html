@@ -36,7 +36,15 @@
 </head>
 <body>
   <section>svgClock</section>
-  <blockquote>
+
+  <blockquote id="modebloc">
+    Module模式，立即调用函数模式，原型链模式
+    <p>
+      <a class="btn1">模式实例页面-有助于插件写法理解</a>
+    </p>
+  </blockquote>
+
+  <blockquote id="svgbloc">
     自定义钟形态，基于路径矢量图形，先在线转化成svg格式，再利用svg的动态形式，做钟表动画。
     <p>
       <a class="btn1">实例一</a>
@@ -44,7 +52,7 @@
       <a class="btn1">实例三</a>
     </p>
   </blockquote>
-
+  
   <blockquote>
     <iframe src="svgClock/svgClock_1.html" id="svgClock_iframe"></iframe>
   </blockquote>
@@ -73,27 +81,35 @@
 
 
 //切换页面
-function changeClock(el,index){
-  el.src = 'svgClock/svgClock_'+index+'.html';
+function changeClock(el,src){
+  el.src = src;
 }
 window.onload = function(){
-  var as = document.querySelectorAll("a.btn1");
+  //blockqoute1里面的按钮事件
+  var a1 = document.querySelector("#modebloc>p>a.btn1");
+  addEvent(a1,'click',function(){
+    changeClock(getById("svgClock_iframe"),'mode.html');
+  });
+
+  //blockqoute2里面的按钮事件
+  var as = document.querySelectorAll("#svgbloc>p>a.btn1");
   for(var i=0,len=as.length;i<len;i++){
     var obj = as[i];
     //闭包 写法1
-   /* (function(obj,i){
+   (function(obj,i){
       addEvent(obj,'click',function(){
-        changeClock(getById("svgClock_iframe"),i+1);
+        changeClock(getById("svgClock_iframe"),'svgClock/svgClock_'+(i+1)+'.html');
       });
-    }(obj,i));*/
+    }(obj,i));
     //闭包 写法2
-    addEvent(obj,'click',(function(i){
+    /*addEvent(obj,'click',(function(i){
         return function (e) {
             e.preventDefault();
             changeClock(getById("svgClock_iframe"),i+1);
         };
-    }(i)));
+    }(i)));*/
   }
+
 }
 </script>
 </html>
