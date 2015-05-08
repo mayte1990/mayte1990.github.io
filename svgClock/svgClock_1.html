@@ -8,6 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script type="text/javascript" src="../jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/snap.svg.js"></script>
+<style>
+#codeDiv{padding:10px;margin-left: 5%;font-size: 1.2em;word-wrap: break-word;width: 60%;}
+</style>
 </head>
 <body class="bblue">
   <!--利用在线svg生成背景图钟摆的路径，隐藏的-->
@@ -20,18 +23,81 @@
   </svg>
   
   
-
+  <center><h1 class="white">实例一：html和js混合</h1></center>
   <!--svg画布-->
-  <svg id="svg">
+  <svg id="svg" class="fl">
     <!--引用钟摆的svg路径-->
     <svg class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>
     <!--利用js生成扇形区域-->
   </svg>
 
   <!--页面调用-->
+  <div class="fl white" id="codeDiv">
+    <pre> 
+      全部代码写在html里面：
+      <span class="gray">
+        /**根据钟摆图度量出以下宽高
+        * width 宽 --svg宽
+        * height 高 --svg高
+        * x x轴坐标 --动态遮罩扇形的x轴
+        * y y轴坐标 --动态遮罩扇形的y轴
+        * cth --度量所得钟摆圆头部超出圆部分的高度值
+        * ra  --动态遮罩扇形的半径
+        */
+      </span><br>
+      var width=238,height=282,x = width/2,y=height-(height-44)/2,cth=45,ra=x;
+      <span class="gray">
+        /** 返回扇形路径
+        * value --已过去的时间分数
+        * total --需要分成的总时间分数
+        * R --扇形半径
+        * x --扇形的x轴坐标
+        * y --扇形的y轴坐标
+        */
+      </span><br>
+      function arc2(value,total,R,x,y){
+        var alpha = 360 / total * value,
+            a = (90 - alpha) * Math.PI / 180,
+            x2 = x + R * Math.cos(a),
+            y2 = y - R * Math.sin(a);
+        return "M"+x+","+(y-R)+"A"+R+","+R+","+0+","+(+(alpha > 180))+","+1+","+x2+","+y2+"L"+x+","+y+"Z";
+      }<br>
+      window.onload=function(){
+        //设置画布svg宽高
+        $("#svg").css({
+          "width":width,
+          "height":height,
+        });
+        var s = Snap("#svg");//获取svg画布对象，此处用了Snap.js
+        s.image('c.png',0,0,width,height);//底层图片遮罩,不首先加载背景，会有闪烁效果
 
+        /**
+        * time 
+        */
+        var time = 60,i=0,sec=60/time*1000,path=null;
+        var timer = setInterval(function(){
+          var R = ra+cth;//扇形半径
+          var option={//扇形css属性
+            fill:"#00374C",
+            stroke:"#00374C",
+            opacity:1,
+            class:"cipath",  //置类名
+          }
 
-  <!--JS实现-->
+          var set = s.selectAll(".cipath").forEach(function(el,index){el.attr({opacity:0})});//把前一次的所有路径都置透明
+          if(time>i){
+            path = s.path(arc2(i,time,R,x,y)).attr(option);//调用方法画不同的扇形
+          }else{
+            s.circle(x,y,R).attr(option);//画满圆
+            clearInterval(timer);
+          }
+          s.image('c.png',0,0,width,height);//底层图片遮罩
+          i=i+1;
+        },sec);
+
+      }
+    </pre>
+  </div>
 
  
 </body>

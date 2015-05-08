@@ -7,10 +7,11 @@
  
  */
 
+
 ;!function(){
 "use strict";
+
 var doc = document;
-document.write("<script language='javascript' src='js/snap.svg.js'></script>"); 
 
 var svgClock = (function(my){
 	//配置
@@ -49,7 +50,7 @@ var svgClock = (function(my){
 		div.appendChild(svg);
 
 		var s = Snap("#svg");
-		s.image('../c.png',0,0,width,height);
+		s.image('c.png',0,0,width,height);
 		return s;
 	};
 
@@ -82,7 +83,7 @@ var svgClock = (function(my){
 		      //clearInterval(timer);
 		      i=0;
 		    }
-		    s.image('../c.png',0,0,width,height);//底层图片遮罩
+		    s.image('c.png',0,0,width,height);//底层图片遮罩
 		    i=i+1;
 		},sec);
 	}

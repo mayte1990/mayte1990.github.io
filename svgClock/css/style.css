@@ -1,3 +1,10 @@
+/*common*/
+.bblue{background-color: #015B7E;}
+.white{color:#fff;}
+.gray{color:#999;}
+.fl{float:left;}
+.tc{text-align: center;}
+/*detail*/
 #holder {
     height: 480px;
     left: 50%;
@@ -16,6 +23,7 @@
   top:6px;
   left:7px;
 }
+#codeDiv{padding:10px;margin-left: 5%;font-size: 1.2em;word-wrap: break-word;width: 60%;}
 <![CDATA[
 .strokeCss{
   stroke-width:2;
@@ -23,5 +31,3 @@
 }
 ]]>
 
-/*common*/
-.bblue{body{background-color: #015B7E;}}

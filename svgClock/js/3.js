@@ -92,7 +92,4 @@ win.svgClock = function(option){
 		},sec);
 	}
 };
-
-
-
 }(window);
