@@ -5,24 +5,90 @@
 	<title>singleton</title>
 </head>
 <body>
-	<p id="mm"></p>
+	<p id="aa"></p>
+	<p id="bb"></p>
+	<p id="cc"></p>
+	<p id="dd"></p>
 </body>
 <script type="text/javascript">
 ;!function(){
 	'use strict';
 
+	//Module模式-1
+	var Mal = function(eq){
+		//声明私有成员
+		var u = 1;
+
+		return {
+			add : function(){
+				var eqC = document.getElementById(eq);
+				eqC.innerHTML = "何以笙箫默";
+			}
+		}//return 返回的才是全局可调用的
+	}
+
+	var m = new Mal('aa');
+	m.add();
+
+	//Module模式-1 立即调用
+	var Hal = function(){
+		//声明私有成员
+		var u = 1;
+
+		return {
+			add : function(eq){
+				var eqC = document.getElementById(eq);
+				eqC.innerHTML = "复仇者联盟";
+			}
+		}//return 返回的才是全局可调用的
+	}();
+
+	Hal.add('bb');
+
+	//Module模式-传入自己
 	var Cal = (function(my){
+		my.num = 123;//可访问
 
 		my.add = function(eq){
 			var eqC = document.getElementById(eq)
 			eqC.innerHTML = "太爱你";
 		}
 
-		return my;
-	}(Cal||{}));
+		return my; //返回对象
+	}(Cal||{})); //立即执行并传入自己，全局
+	
+	Cal.add('cc');
 
-	Cal.add('mm');
+	//原型链方式
+	var Oal = function(){
+		this.num = 5;//可访问
+		this.u = 1;
+	}
+	Oal.prototype.add = function(eq,str){
+		var eqC = document.getElementById(eq)
+		eqC.innerHTML = eqC.innerHTML+str;
+		return eqC;
+	}
+	Oal.prototype.subadd = function(el,substr){
+		el.innerHTML = el.innerHTML+","+substr;
+	}
+	var osub = new Oal();//new父类的实例，实例继承父类方法
+	osub.subadd(osub.add('dd',"岭南天地"),osub.num);
+
+	var Psub = function(){//另一个实例
+		this.aa = 77;
+	}
+	Psub.prototype = new Oal();//实例的原型指向父类
+	var pp = new Psub();
+	pp.subadd(pp.add('dd',"简氏别墅"),pp.u);//依旧可以访问父类的属性变量
+
+	Psub.prototype = Oal.prototype;
+	var pp2 = new Psub();
+	pp2.subadd(pp2.add('dd',"哈根达斯"),pp2.u);//不可以访问父类的属性变量，只能访问父类的prototype内容
+
 
 }();
+
+
 </script>
 </html>
