@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AppJS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/zxx.lib.css">
+    <link rel="stylesheet" href="appjs/app.min.css">
+    <style>
+      .himg{width:50%;height:30%;vertical-align: top;}
+      .himg~div{width:40%;height:25%;padding:20px 10px;}
+      .akeimg{width:100%;height:40%;}
+      .nav_1>li{background-color: #666;color:#fff;border:0px;}
+      i{margin-right:0.5em;}.fa{font-size: 1.2em;}
+      i.fa-angle-right{float:right;line-height: inherit;font-size: 1.5em;color:#aaa;}
+      .app-list>li{*zoom:1;}
+      .app-list>li:after{display:table; content:''; clear:both;}
+      .w49{width:47%;list-style: none;}.w49+.w49{padding-left: 9px;}
+      .subhead{background-color: #444;color: #fff;}
+    </style>
+  </head>
+
+  <body>
+  	<!--首页-->
+  	<div class="app-page" data-page="home">
+  		<div class="app-content">
+  			<img src="dz.jpeg" class="himg">
+  			<div class="dib tc">
+  				<img src="AKE.png" class="akeimg">
+  				<span>ALJKFDKFJL</span>
+  			</div>
+			<ul class="app-list nav_1">
+				<li>
+					<span>设备名称：</span>
+					<span>智能一体式控制机</span>
+				</li>
+				<li>
+					<span>设备型号：</span>
+					<span>JFLKASDJFLLJF</span>
+				</li>
+			</ul>
+			<ul class="app-list">
+				<li class="status_info"><i class="fa fa-th-list fa-fw"></i>设备信息</li>
+				<li class="run_status"><i class="fa fa-tachometer fa-fw"></i>运行状况</li>
+				<li class="parking_info"><i class="fa fa-paypal fa-fw"></i>停车场信息</li>
+				<li class="repair_info"><i class="fa fa-wrench fa-fw"></i>维护信息</li>
+				<li class="user_info"><i class="fa fa-user fa-fw"></i>用户信息</li>
+			</ul>
+  		</div>
+  	</div>
+  	<!--end-->
+
+  	<!--设备信息-->
+  	<div class="app-page" data-page="status_info">
+  		<div class="app-topbar">
+			<div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+			<div class="app-title">设备信息</div>
+  		</div>
+  		<div class="app-content">
+  			<div class="app-section">
+  				<ul class="app-list">
+  					<li class="mainControl_info">主控板<i class="fa fa-angle-right"></i></li>
+  					<li class="camera_info">摄像机<i class="fa fa-angle-right"></i></li>
+  					<li class="screen_info">显示屏<i class="fa fa-angle-right"></i></li>
+  					<li class="voiceBoards_info">语音板<i class="fa fa-angle-right"></i></li>
+  					<li class="vehicleDetector_info">车辆检测器<i class="fa fa-angle-right"></i></li>
+  					<li class="interfaceBoard_info">接板口<i class="fa fa-angle-right"></i></li>
+  				</ul>
+  			</div>
+  			<div class="app-section">
+  				<ul class="app-list">
+  					<li>机芯<span class="r">FLKASDJFKLKLASJDF FLASJDFL</span></li>
+  					<li>交接机<span class="r">FASDFASDFASDF</span></li>
+  				</ul>
+  			</div>
+  			<div class="app-section">
+  				<ul class="app-list">
+  					<li>SIM卡<span class="r">FLKASDJFKLKLASJDF FLASJDFL</span></li>
+  				</ul>
+  			</div>
+  		</div>
+  	</div>
+  	<!--end-->
+	<!--运行状况-->
+  	<div class="app-page" data-page="run_status">
+  		<div class="app-topbar">
+			<div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+			<div class="app-title">运行状况</div>
+  		</div>
+  		<div class="app-content">
+			<ul class="app-list">
+				<li>投入运行日期：<span>2015-10-22</span></li>
+				<li>累计运行天数：<span>223</span></li>
+				<li>开关闸总数：<span>20151231</span></li>
+			</ul>
+  			<ul class="app-list mt10">
+				<li class="warn_log">警报日志<i class="fa fa-angle-right"></i></li>
+			</ul>
+  		</div>
+  	</div>
+  	<!--end-->
+  	<!--停车场信息-->
+  	<div class="app-page" data-page="parking_info">
+  		<div class="app-topbar">
+			<div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+			<div class="app-title">停车场信息</div>
+  		</div>
+  		<div class="app-content">
+			<ul class="app-list">
+				<li class="subhead">佛山顺联地下停车场</li>
+				<li><ul><li class="l brd w49">经度：111.22</li><li class="l w49">纬度：123.23</li></ul></li>
+				<li>地址：<span>季华五路123号</span></li>
+				<li>类型：<span>地下</span></li>
+			</ul>
+  		<ul class="app-list mt10">
+				<li>车位:463<div class="dib r tr f12">地面：0&nbsp;&nbsp;|&nbsp;&nbsp;</span>地下：123</div></li>
+        <li>临时车位:463</li>
+        <li>月租车位:463</li>
+        <li>VIP车位:463</li>
+			</ul>
+      <ul class="app-list mt10">
+        <li>通道数量：6<div class="dib r tr f12">入：3&nbsp;&nbsp;|&nbsp;&nbsp;出：5</div></li>
+      </ul>
+  		</div>
+  	</div>
+  	<!--end-->
+    <!--停车场信息-->
+    <div class="app-page" data-page="repair_info">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">维修信息</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li>项目编号：LSJDFLJLSDFJ</li>
+        <li>发货日期：2015-09-12</li>
+        <li>验收日期：<span>2015-11-23</span></li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>合同保修到期日：2016-08-02</li>
+        <li>维保合同到期日：无</li>
+        <li>维保类型：全保</li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>备注：无</li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    <!--用户信息-->
+    <div class="app-page" data-page="user_info">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">用户信息</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li>客户名称：顺联国际</li>
+        <li>客户联系人：区小姐</li>
+        <li>客户联系电话：<span>0757-8123214782</span></li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    
+
+    <!--二级页面-->
+    <!--主控板信息-->
+    <div class="app-page" data-page="mainControl_info">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">主控板信息</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li class="subhead">主控板</li>
+        <li>Mac地址：AB-FG-ED-ED-ED</li>
+        <li>IP地址：<span>1.1.1.0</span></li>
+        <li>请求地址：<span>http://58.252.44.11:8080/</span></li>
+        <li>安装位置：<span>顺联国际地下进出口</span></li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>软件版本：V1.1.1<div class="dib r tr f12 g9">出厂版本：V1.1.0</div></li>
+        <li>硬件版本：V1.1</li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>序列号：LAHSDFKLJASDLFJL</li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    <!--摄像机信息-->
+    <div class="app-page" data-page="camera_info">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">摄像机信息</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li class="subhead">摄像机</li>
+        <li>IP地址：<span>1.1.1.0</span></li>
+        <li>端口：<span>8080</span></li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>通道：地下入口</li>
+        <li>类型：入口摄像机</li>
+        <li>模式：以太网</li>
+        <li>状态：在线</li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>序列号：LAHSDFKLJASDLFJL</li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    <!--显示屏信息-->
+    <div class="app-page" data-page="screen_info">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">显示屏信息</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li class="subhead">显示屏</li>
+        <li>屏地址：<span>24</span></li>
+        <li>组地址：<span>80</span></li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>通道：5</li>
+        <li>类型：入口显示屏</li>
+        <li>传输模式：RS485</li>
+        <li>状态：在线</li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>序列号：LAHSDFKLJASDLFJL</li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    <!--语音板信息-->
+    <div class="app-page" data-page="voiceBoards_info">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">语音板信息</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li class="subhead">语音板</li>
+        <li>当前软件版本：V1.1.1<div class="dib r tr f12 g9">出厂版本：V1.1.0</div></li>
+        <li>硬件版本：V1.1</li>
+      </ul>
+      <ul class="app-list mt10">
+        <li>序列号：LAHSDFKLJASDLFJL</li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    <!--车辆检测器-->
+    <div class="app-page" data-page="vehicleDetector_info">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">车辆检测器信息</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li class="subhead">车辆检测器</li>
+        <li>车辆检测器1：<span>JFLSDAJFLJFLKASDJ</span></li>
+        <li>车辆检测器1：<span>FLKSDJAFKLJASDLFKJ</span></li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    <!--接口板-->
+    <div class="app-page" data-page="interfaceBoard_info">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">接口板信息</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li class="subhead">接口板</li>
+        <li>车辆检测器1：<span>JFLSDAJFLJFLKASDJ</span></li>
+        <li>车辆检测器1：<span>FLKSDJAFKLJASDLFKJ</span></li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    <!--警报日志-->
+    <div class="app-page" data-page="warn_log">
+      <div class="app-topbar">
+      <div class="app-button left" data-back>&nbsp;&nbsp;&nbsp;</div>
+      <div class="app-title">运行状况</div>
+      </div>
+      <div class="app-content">
+      <ul class="app-list">
+        <li class="subhead">
+          <ul class="f12"><li class="l tl w49">类型</li><li class="l tr w49">日期</li></ul>
+        </li>
+        <li style="height:auto;">此设备已运行20万次，请及时维护。<div class="dib r tr g9 pr5">2015-03-13</div></li>
+      </ul>
+      </div>
+    </div>
+    <!--end-->
+    <script src="appjs/zepto.js"></script>
+    <script src="appjs/app.min.js"></script>
+    <script>
+    App.populator('home',function(page){
+      $(page).find(".app-list li").on('click',function(){
+    	  var url = this.className;
+        App.load(url,'swap-left');
+      });
+    });
+    App.populator('status_info',function(page){
+      $(page).find(".app-list li").on('click',function(){
+        var url = this.className;
+        App.load(url,'slide-left');
+      });
+    });
+    App.populator('run_status',function(page){
+      $(page).find('.warn_log').on('click',function(){
+        var url = this.className;
+        App.load(url,'slide-left');
+      });
+    });
+    try{
+    	App.restore({ maxAge: 2000*100 });
+    }catch(e){
+    	App.load('home');
+    }
+    </script>
+  </body>
+</html>

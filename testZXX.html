@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜效果</title>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="zxxZoom/jqzoom.js"></script>
+	<style type="text/css">
+	img{max-width:none;}
+	.zxx_image_zoom_list{display:inline-block; text-align:center; font-size:128px;}
+	.zxx_image_zoom_list img.zxx_zoom_image{padding:3px; border:1px solid #cccccc; background:white; vertical-align:middle; position:relative;width:280px; height:280px;}
+	.zxx_image_zoom_list:hover,.zxx_image_zoom_list:hover img.zxx_zoom_image{border-color:#ff3300;}
+	.zxx_image_zoom_div{width:200px; height:200px; padding:3px; background:white; border:1px solid #cccccc; text-align:center; position:absolute; z-index:1000; left:0; top:0; overflow:hidden;}		
+	</style>
+</head>
+<body>
+	<div class="zxx_main_con" style="height:300px;overflow-y:scroll;">
+		<a class="zxx_image_zoom_list" href="car.jpg"><img class="zxx_zoom_image" src="car.jpg"></a>
+		<a class="zxx_image_zoom_list" href="car.jpg"><img class="zxx_zoom_image" src="car.jpg"></a>
+		<a class="zxx_image_zoom_list" href="car.jpg"><img class="zxx_zoom_image" src="car.jpg"></a>
+		<a class="zxx_image_zoom_list" href="car.jpg"><img class="zxx_zoom_image" src="car.jpg"></a>
+		<a class="zxx_image_zoom_list" href="car.jpg"><img class="zxx_zoom_image" src="car.jpg"></a>
+		<a class="zxx_image_zoom_list" href="car.jpg"><img class="zxx_zoom_image" src="car.jpg"></a>
+	</div>
+</body>
+<script type="text/javascript">
+$(function(){
+	$("img.zxx_zoom_image").jqueryzoom();
+});
+</script>
+</html>

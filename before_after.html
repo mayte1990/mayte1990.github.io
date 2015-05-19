@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类使用</title>
+	<style type="text/css">
+	blockquote:before {
+		content: open-quote;
+		z-index: -1;
+		color: #DDD;
+		font-size: 120px;
+		font-family: serif;
+		font-weight: bolder;
+	}
+	blockquote:after {
+		content: "↗";
+		z-index: -1;
+		color: #DDD;
+		font-size: 120px;
+		font-family: serif;
+		font-weight: bolder;
+	}
+
+	a {
+		position: relative;
+		display: inline-block;
+		outline: none;
+		text-decoration: none;
+		color: #000;
+		font-size: 32px;
+		padding: 5px 10px;
+	}
+
+	a:hover::before, a:hover::after { position: absolute; }
+	a:hover::before { content: "\5B"; left: -20px; }
+	a:hover::after { content: "\5D"; right:  -20px; }
+	.p10{padding:10px;}
+	</style>
+</head>
+<body>
+	<blockquote>
+			11111111111111111111111111111111111aaaaaaaaaaaaaaaaa1
+	</blockquote>
+
+	<div class="p10">
+		<a>NAVER!!!</a><br>
+		<a>NAVER@@@@@@</a><br>
+		<a>NAVER#####</a><br>
+	</div>
+
+	
+</body>
+</html>

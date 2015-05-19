@@ -56,6 +56,13 @@
   <blockquote>
     <iframe src="svgClock/svgClock_1.html" id="svgClock_iframe"></iframe>
   </blockquote>
+
+  <blockquote id="appJs">
+    App.js 轻量级快速搭建手机界面的javascript框架，有过场动画、界面UI和基础插件。
+    <p>
+      <a class="btn1">例&nbsp;&nbsp;子</a>
+    </p>
+  </blockquote>
   
 
 </body>
@@ -109,6 +116,12 @@ window.onload = function(){
         };
     }(i)));*/
   }
+
+  //blockqoute1里面的按钮事件
+  var a1 = document.querySelector("#appJs>p>a.btn1");
+  addEvent(a1,'click',function(){
+    location.href="appJs.html";
+  });
 
 }
 </script>
