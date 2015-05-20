@@ -1,128 +1,149 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js">
 <head>
-<title>test</title>
-<meta charset="utf-8" />
-<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
-<style type="text/css">
-  a{text-decoration: none;}
-  .btn1{
-    padding:10px 15px;
-    letter-spacing: 1.3px;
-    border: 1px solid #999;
-    background-color: #444;
-    color:#fff;
-    border-radius: 10px;
-    font-weight: 600;
-  }
-  section{
-    font-size: 1.5em;
-    font-weight: 900;
-    color:#888;
-  }
-  blockquote{
-    background-color: #eee;
-    padding:10px;
-  }
-  blockquote a{
-    margin-right: 10%;
-  }
-  #svgClock_iframe{
-    width:98%;
-    margin:0 auto;
-    height:1000px;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Hello Amaze UI</title>
+  <style type="text/css">
+	/* [class*='am-u'] {
+		border: 1px solid red;
+	} */
+  </style>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="amazeUI/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="amazeUI/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="amazeUI/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="amazeUI/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="amazeUI/css/amazeui.min.css">
+  <link rel="stylesheet" href="amazeUI/css/app.css">
+  <link rel="stylesheet" href="css/zxx.lib.css">
 </head>
 <body>
-  <section>svgClock</section>
+<!--导航条-->
+<header class="am-topbar am-topbar-inverse" style="margin-bottom:0;">
+  <h1 class="am-topbar-brand">
+    <a href="#" alt="http://mayte1990.github.io"><i class="am-icon-user am-margin-right-sm"></i>mayte1990.github.io</a>
+  </h1>
 
-  <blockquote id="modebloc">
-    Module模式，立即调用函数模式，原型链模式
-    <p>
-      <a class="btn1">模式实例页面-有助于插件写法理解</a>
-    </p>
-  </blockquote>
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
 
-  <blockquote id="svgbloc">
-    自定义钟形态，基于路径矢量图形，先在线转化成svg格式，再利用svg的动态形式，做钟表动画。
-    <p>
-      <a class="btn1">实例一</a>
-      <a class="btn1">实例二</a>
-      <a class="btn1">实例三</a>
-    </p>
-  </blockquote>
-  
-  <blockquote>
-    <iframe src="svgClock/svgClock_1.html" id="svgClock_iframe"></iframe>
-  </blockquote>
+  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right">
+      <li class="am-active"><a href="#" class="am-icon-home">首页</a></li>
+      <li><a href="#">项目</a></li>
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;" >
+          下拉 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li class="am-dropdown-header">标题</li>
+          <li><a href="#">1. 去月球</a></li>
+          <li class="am-active"><a href="#">2. 去火星</a></li>
+          <li><a href="#">3. 还是回地球</a></li>
+          <li class="am-disabled"><a href="#">4. 下地狱</a></li>
+          <li class="am-divider"></li>
+          <li><a href="#">5. 桥头一回首</a></li>
+        </ul>
+      </li>
+    </ul>  
+  </div>
+</header>
 
-  <blockquote id="appJs">
-    App.js 轻量级快速搭建手机界面的javascript框架，有过场动画、界面UI和基础插件。
-    <p>
-      <a class="btn1">例&nbsp;&nbsp;子</a>
-    </p>
-  </blockquote>
-  
+<!--大横幅-->
+<div class="am-vertical-align am-margin-bottom-sm" style="height:150px;background-color:#ddd;">
+	<p  class="am-kai am-vertical-align-middle am-text-primary am-animation-scale-up" style="padding:1rem;">
+		<a href="#" class="am-icon-btn am-warning am-icon-github"></a>
+		<span class="am-text-xxxl">插件集锦盒</span><br>
+		<i class="am-text-default">响应式框架，手机插件，PC端插件...</i>
+	</p>
+</div>
 
-</body>
+<!--container-->
+<div class="am-container am-cf">
+	<!--固定导航侧边栏-->
+	<div class="am-fl am-u-lg-3">
+		<ul class="am-nav am-show-lg-only" data-am-sticky>
+		  <li><a href="#" class="am-icon-home">&nbsp;&nbsp;首页</a></li>
+		  <li><a href="#" class="am-icon-plus" data-am-collapse="{target:'#plugins-nav'}">&nbsp;&nbsp;插件写法学习</a></li>
+      <nav>
+        <ul id="plugins-nav" class="am-nav am-collapse">
+          <li><a href="code.html" class="am-icon-list ml10">&nbsp;&nbsp;原型链</a></li>
+          <li><a href="code.html" class="am-icon-list ml10">&nbsp;&nbsp;闭包</a></li>
+        </ul>
+      </nav>
+		  <li class="am-nav-divider"></li>
+		  <li><a href="#" class="am-icon-plus" data-am-collapse="{target: '#UI_JS-nav'}">&nbsp;&nbsp;UI & JS 框架</a></li>
+			<nav>
+			  <ul id="UI_JS-nav" class="am-nav am-collapse">
+			    <li><a href="appJs.html" class="am-icon-list ml10">&nbsp;&nbsp;App.js</a></li>
+			    <li><a href="#" class="am-icon-list ml10">&nbsp;&nbsp;AmazeUI</a></li>
+			  </ul>
+			</nav>
+		  <li><a href="#" class="am-icon-plus" data-am-collapse="{target: '#touch-nav'}">&nbsp;&nbsp;手势滑动插件</a></li>
+        <nav>
+        <ul id="touch-nav" class="am-nav am-collapse">
+          <li><a href="" class="am-icon-list ml10">&nbsp;&nbsp;quoJS.js</a></li>
+          <li><a href="" class="am-icon-list ml10">&nbsp;&nbsp;flickity.js</a></li>
+        </ul>
+      </nav>
+		</ul>
+	</div>
+	<!--正文-->
+	<div class="am-u-lg-9 am-show-lg-only am-fl" style="position:relative;">
+		<div class="am-show-lg-only" style="width:100%%;height:1800px;border:1px solid red;">
+        
+    </div>
+		<button style="position:fixed;bottom:68px;left:95%;" data-am-smooth-scroll class="am-btn am-btn-primary am-round am-show-lg-only"><i class="am-icon am-icon-level-up"></i>T</button>
+		<button style="position:fixed;bottom:20px;left:95%;" id="doc-scroll-to-btm" class="am-btn am-btn-default am-round am-show-lg-only"><i class="am-icon am-icon-level-down"></i>B</button>
+	</div>
+	<div class="am-u-sm-12 am-show-md-down am-fl">
+		<div style="width:100%;height:1800px;border:1px solid red;">1</div>
+	</div>
+</div>
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="amazeUI/js/jquery.min.js"></script>
+<script src="amazeUI/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<![endif]-->
 <script type="text/javascript">
-;!function(win){
-  var doc = document;
-  //根据id获取元素
-  win.getById = function(id){
-    return doc.getElementById(id);
-  }
+$(function() {
+    /*var $dropdown = $('#dropdown');
+    $dropdown.on('click', function(e) {
+      $dropdown.dropdown('toggle');
+      return false;
+    });*/
 
-  //绑定事件
-  win.addEvent = function(el,event,func){
-    if(el.attachEvent){
-      el.attachEvent ("on"+event,func);
-    }else{
-      el.addEventListener(event,func,false);
-    }
-  }
-
-  
-}(window);
-
-
-//切换页面
-function changeClock(el,src){
-  el.src = src;
-}
-window.onload = function(){
-  //blockqoute1里面的按钮事件
-  var a1 = document.querySelector("#modebloc>p>a.btn1");
-  addEvent(a1,'click',function(){
-    changeClock(getById("svgClock_iframe"),'mode.html');
-  });
-
-  //blockqoute2里面的按钮事件
-  var as = document.querySelectorAll("#svgbloc>p>a.btn1");
-  for(var i=0,len=as.length;i<len;i++){
-    var obj = as[i];
-    //闭包 写法1
-   (function(obj,i){
-      addEvent(obj,'click',function(){
-        changeClock(getById("svgClock_iframe"),'svgClock/svgClock_'+(i+1)+'.html');
-      });
-    }(obj,i));
-    //闭包 写法2
-    /*addEvent(obj,'click',(function(i){
-        return function (e) {
-            e.preventDefault();
-            changeClock(getById("svgClock_iframe"),i+1);
-        };
-    }(i)));*/
-  }
-
-  //blockqoute1里面的按钮事件
-  var a1 = document.querySelector("#appJs>p>a.btn1");
-  addEvent(a1,'click',function(){
-    location.href="appJs.html";
-  });
-
-}
+	$('#doc-scroll-to-btm').on('click', function() {
+    	var $w = $(window);
+    	$w.smoothScroll({position: $(document).height() - $w.height()});
+    });
+});	
 </script>
+</body>
 </html>

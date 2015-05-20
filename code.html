@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+<meta charset="utf-8" />
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<style type="text/css">
+  a{text-decoration: none;}
+  .btn1{
+    padding:10px 15px;
+    letter-spacing: 1.3px;
+    border: 1px solid #999;
+    background-color: #444;
+    color:#fff;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  section{
+    font-size: 1.5em;
+    font-weight: 900;
+    color:#888;
+  }
+  blockquote{
+    background-color: #eee;
+    padding:10px;
+  }
+  blockquote a{
+    margin-right: 10%;
+  }
+  #svgClock_iframe{
+    width:98%;
+    margin:0 auto;
+    height:1000px;
+  }
+</style>
+</head>
+<body>
+  <section>svgClock</section>
+
+  <blockquote id="modebloc">
+    Module模式，立即调用函数模式，原型链模式
+    <p>
+      <a class="btn1">模式实例页面-有助于插件写法理解</a>
+    </p>
+  </blockquote>
+
+  <blockquote id="svgbloc">
+    自定义钟形态，基于路径矢量图形，先在线转化成svg格式，再利用svg的动态形式，做钟表动画。
+    <p>
+      <a class="btn1">实例一</a>
+      <a class="btn1">实例二</a>
+      <a class="btn1">实例三</a>
+    </p>
+  </blockquote>
+  
+  <blockquote>
+    <iframe src="svgClock/svgClock_1.html" id="svgClock_iframe"></iframe>
+  </blockquote>
+
+  <blockquote id="appJs">
+    App.js 轻量级快速搭建手机界面的javascript框架，有过场动画、界面UI和基础插件。
+    <p>
+      <a class="btn1">例&nbsp;&nbsp;子</a>
+    </p>
+  </blockquote>
+  
+
+</body>
+<script type="text/javascript">
+;!function(win){
+  var doc = document;
+  //根据id获取元素
+  win.getById = function(id){
+    return doc.getElementById(id);
+  }
+
+  //绑定事件
+  win.addEvent = function(el,event,func){
+    if(el.attachEvent){
+      el.attachEvent ("on"+event,func);
+    }else{
+      el.addEventListener(event,func,false);
+    }
+  }
+
+  
+}(window);
+
+
+//切换页面
+function changeClock(el,src){
+  el.src = src;
+}
+window.onload = function(){
+  //blockqoute1里面的按钮事件
+  var a1 = document.querySelector("#modebloc>p>a.btn1");
+  addEvent(a1,'click',function(){
+    changeClock(getById("svgClock_iframe"),'mode.html');
+  });
+
+  //blockqoute2里面的按钮事件
+  var as = document.querySelectorAll("#svgbloc>p>a.btn1");
+  for(var i=0,len=as.length;i<len;i++){
+    var obj = as[i];
+    //闭包 写法1
+   (function(obj,i){
+      addEvent(obj,'click',function(){
+        changeClock(getById("svgClock_iframe"),'svgClock/svgClock_'+(i+1)+'.html');
+      });
+    }(obj,i));
+    //闭包 写法2
+    /*addEvent(obj,'click',(function(i){
+        return function (e) {
+            e.preventDefault();
+            changeClock(getById("svgClock_iframe"),i+1);
+        };
+    }(i)));*/
+  }
+
+  //blockqoute1里面的按钮事件
+  var a1 = document.querySelector("#appJs>p>a.btn1");
+  addEvent(a1,'click',function(){
+    location.href="appJs.html";
+  });
+
+}
+</script>
+</html>
