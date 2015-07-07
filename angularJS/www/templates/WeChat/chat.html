@@ -1,0 +1,24 @@
+<ion-view view-title="{{user.user.username}}">
+  <ion-header-bar align-title="left" class="bar-dark">
+  	<button class="button button-clear" href="#/tab/">
+        <i class="icon ion-arrow-left-c"></i>
+    </button>
+    <div class="h1 title">{{user.user.username}}<i class="icon ion-android-notifications-off"></i></div>
+    <div class="buttons">
+      <button class="button button-clear">
+        <i class="icon ion-person-stalker"></i>
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content align="center" padding="10">
+    <img ng-src="{{user.user.picture.thumbnail}}" style="width:3em;height:3em;">
+    我的邮箱是：{{user.user.email}}
+  </ion-content>
+  <div class="bar bar-footer bar-light" style="border-top:1px solid #ddd;">
+	  <button class="button button-clear"><i class="icon ion-ios-volume-high"></i></button>
+	  <div class="title" align="center">
+	  	<input style="border-bottom:1px solid #ddd;width:80%;display:inline-block;" type="text">
+	  </div>
+	  <button class="button button-clear"><i class="icon ion-ios-plus-outline"></i></button>
+  </div>
+</ion-view>
