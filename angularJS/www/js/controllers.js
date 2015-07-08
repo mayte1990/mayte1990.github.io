@@ -1,14 +1,16 @@
 angular.module('starter.controllers', [])
 
-.controller("WeChatController",function($scope,$http,$log,$ionicScrollDelegate,$ionicSideMenuDelegate,PersonService){
+.controller("WeChatController",function($scope,$rootScope,$http,$log,$ionicScrollDelegate,$ionicSideMenuDelegate,PersonService){
   //初始化第一个方法-记录10条
   PersonService.GetFeed().then(function(items){
     $scope.items = items;
+    $rootScope.items = $scope.items;//赋值-全局items
   });
   //向上拉的方法
   $scope.doRefresh = function(){
      PersonService.GetNewUser().then(function(items){
        $scope.items = items.concat($scope.items);
+       $rootScope.items = $scope.items;//赋值-全局items
 
        //Stop the ion-refresher from spinning
        $scope.$broadcast('scroll.refreshComplete');
@@ -18,6 +20,7 @@ angular.module('starter.controllers', [])
   $scope.loadMore = function() {
     PersonService.GetNewUser().then(function(items){
        $scope.items = [].concat($scope.items,items);
+       $rootScope.items = $scope.items;//赋值-全局items
 
        //Stop the ion-refresher from spinning
        $scope.$broadcast('scroll.infiniteScrollComplete');
@@ -34,20 +37,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('chatController',function($scope,$stateParams,PersonService){
-  console.log($stateParams.username);
-  $scope.user = PersonService.MatchUser($stateParams.username);
-  console.log($scope.user);
-})
-
-.controller('HomeDetailController',function($scope,$stateParams,PersonService){
-  $scope.user = PersonService.MatchUser($stateParams.username);
-
-  $scope.moveItem = function(item, fromIndex, toIndex) {
-    //把该项移动到数组中
-    $scope.items.splice(fromIndex, 1);
-    $scope.items.splice(toIndex, 0, item);
-  };
+.controller('chatController', function($scope,$rootScope,$stateParams,PersonService){
+  $scope.user = PersonService.MatchUser($rootScope.items,$stateParams.username);
 })
 
 .controller('ContactController', function($scope) {})

@@ -17,10 +17,10 @@ angular.module('starter.services', [])
         return items;
       });
     },
-    MatchUser: function(username){
-      for(var i = 0,len = items.length;i<len;i++){
-        if(items[i].user.username === username){
-          return items[i];
+    MatchUser: function(rootItems,username){
+      for(var i = 0,len = rootItems.length;i<len;i++){
+        if(rootItems[i].user.username === username){
+          return rootItems[i];
         }
       }
       return null;
