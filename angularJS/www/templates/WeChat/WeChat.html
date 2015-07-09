@@ -1,7 +1,4 @@
 <style>
-  .fl{float:left;}
-  .fr{float:right;}
-  .fix{overflow:hidden;}
   .txtof{
     width: 90%;
     overflow: hidden;
@@ -9,17 +6,10 @@
   }
 </style>
 <ion-view view-title="WeChat">
-  <ion-header-bar align-title="left" class="bar-dark">
-    <div class="h1 title">WeChat</div>
-    <div class="buttons">
-      <button class="button button-clear">
-        <i class="icon ion-search"></i>
-      </button>
-      <button class="button button-clear">
-        <i class="icon ion-plus-round"></i>
-      </button>
-    </div>
-  </ion-header-bar>
+  
+  <div header value="wechat_h"></div> 
+  <!--或者<header value="wechat_h" ></header>-->
+
   <ion-content>
     <ion-refresher
       pulling-text="下拉刷新..."

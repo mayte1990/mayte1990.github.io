@@ -41,9 +41,40 @@ angular.module('starter.controllers', [])
   $scope.user = PersonService.MatchUser($rootScope.items,$stateParams.username);
 })
 
-.controller('ContactController', function($scope) {})
+.controller('contactController', function($scope) {
+  $scope.headList = [{
+    "icon" : "ion-person-add",
+    "text" : "朋友推荐讯息",
+    "bgColor" : {"background-color":"orange"},
+    "url" : ""
+  },{
+    "icon" : "ion-person-stalker",
+    "text" : "聊天室",
+    "bgColor" : {"background-color":"green"},
+    "url" : ""
+  },{
+    "icon" : "ion-ios-pricetag",
+    "text" : "标签",
+    "bgColor" : {"background-color":"blue"},
+    "url" : ""
+  },{
+    "icon" : "ion-ios-person",
+    "text" : "官方账号",
+    "bgColor" : {"background-color":"purple"},
+    "url" : ""
+  }];
 
-.controller('ContentController',function($scope,ListService){
+})
+
+.controller('findController', function($scope) {})
+
+.controller('setController', function($scope,PersonService) {
+  PersonService.GetNewUser().then(function(items){
+    $scope.user = items[0];
+  });
+})
+
+.controller('contentController',function($scope,ListService){
   $scope.backHome = function(){
     location.href = "#/index";
   }

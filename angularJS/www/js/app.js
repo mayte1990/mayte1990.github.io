@@ -17,6 +17,15 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
     }
   });
 })
+/*模板*/
+.directive('header', function () {
+  return { 
+    restrict: 'AE', 
+    templateUrl: function (elem, attr) {
+        return "templates/head_footer/"+attr.value + ".html";  //当然这里我们可以直接指定路径，同时在模板中可以包含表达式
+    }
+  };
+})
 
 .config(function($stateProvider,$urlRouterProvider){
   $urlRouterProvider.otherwise("/tab/WeChat");
@@ -53,8 +62,17 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
     url: '/contact',
     views: {
       'contact-tab': {
-        templateUrl: 'templates/contact.html',
-        controller: 'ContactController'
+        templateUrl: 'templates/Contact/contact.html',
+        controller: 'contactController'
+      }
+    }
+  })
+  .state("tab.find",{
+    url: '/find',
+    views: {
+      'find-tab': {
+        templateUrl: 'templates/Find/find.html',
+        controller: 'findController'
       }
     }
   })
@@ -62,8 +80,8 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
     url: '/set',
     views: {
       'set-tab': {
-        templateUrl: 'templates/set.html',
-        controller: 'SetController'
+        templateUrl: 'templates/Set/set.html',
+        controller: 'setController'
       }
     }
   })

@@ -1,0 +1,12 @@
+<ion-view view-title="通讯录">
+
+  <div header value="wechat_h"></div> 
+
+  <ion-content class="">
+  	<div class="list">
+  		<a href="{{item.url}}" class="item" ng-repeat="item in headList">
+  			<i class="{{item.icon}} icon-css" style="color:#fff;" ng-style="{{item.bgColor}}"></i>{{item.text}}
+  		</a>
+  	</div>
+  </ion-content>
+</ion-view>
