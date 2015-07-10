@@ -76,6 +76,11 @@ angular.module('starter.controllers', [])
     $rootScope.selectTab(1);
     location.href = "#/tab/contact";
   }
+
+  $rootScope.addFlag = false;
+  $rootScope.toggleAddFlag = function(){
+    $rootScope.addFlag = $rootScope.addFlag === false?true:false;
+  }
 })
 
 .controller('chatController', function($scope,$rootScope,$stateParams,PersonService){

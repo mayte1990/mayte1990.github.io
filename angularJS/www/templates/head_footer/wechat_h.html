@@ -1,11 +1,33 @@
 <ion-header-bar align-title="left" class="bar-dark">
   <div class="h1 title">WeChat</div>
   <div class="buttons">
-    <button class="button button-clear">
+    <button class="button button-clear" style="margin-right:1em;">
       <i class="icon ion-search"></i>
     </button>
-    <button class="button button-clear">
+    <button class="button button-clear" ng-click="toggleAddFlag()">
       <i class="icon ion-plus-round"></i>
     </button>
+  </div>
+  <div class="list rt_pos" ng-show="addFlag==true">
+	<a class="item item-dark">
+		<i class="ion-chatbox"></i>
+		建立聊天室
+	</a>
+	<a class="item item-dark">
+		<i class="ion-person-add"></i>
+		新增朋友
+	</a>
+	<a class="item item-dark">
+		<i class="ion-qr-scanner"></i>
+		扫描QR Code
+	</a>
+	<a class="item item-dark">
+		<i class="ion-card"></i>
+		收款
+	</a>
+	<a class="item item-dark">
+		<i class="ion-chatbox"></i>
+		帮助与意见反馈
+	</a>
   </div>
 </ion-header-bar>
