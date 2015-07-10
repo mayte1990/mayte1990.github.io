@@ -1,5 +1,41 @@
 angular.module('starter.controllers', [])
 
+.controller('tabController',function($scope,$rootScope){
+  $scope.tabs = [{
+    "title" : "WeChat",
+    "icon" : "ion-chatbubbles",
+    "url" : "#/tab/WeChat",
+    "nav" : "WeChat-tab",
+    "active" : "active"
+  },{
+    "title" : "通讯录",
+    "icon" : "ion-person-stalker",
+    "url" : "#/tab/contact",
+    "nav" : "contact-tab",
+    "active" : ''
+  },{
+    "title" : "发现",
+    "icon" : "ion-flash-off",
+    "url" : "#/tab/find",
+    "nav" : "find-tab",
+    "active" : ''
+  },{
+    "title" : "设定",
+    "icon" : "ion-person",
+    "url" : "#/tab/set",
+    "nav" : "set-tab",
+    "active" : ''
+  }];
+
+  $rootScope.selectTab = function(index){
+    var tabs = $scope.tabs;
+    angular.forEach(tabs, function(obj) {
+      if(obj["active"] == "active"){obj["active"]='';}
+    });
+    tabs[index].active = "active";
+  }
+})
+
 .controller("WeChatController",function($scope,$rootScope,$http,$log,$ionicScrollDelegate,$ionicSideMenuDelegate,PersonService){
   //初始化第一个方法-记录10条
   PersonService.GetFeed().then(function(items){
@@ -30,18 +66,23 @@ angular.module('starter.controllers', [])
   // $scope.$on('stateChangeSuccess', function() {
   //   $scope.loadMore();
   // });
-
+  //返回顶部
   $scope.scrollTop = function() {
     $ionicScrollDelegate.scrollTop();
   };
-
+  //滑动
+  $scope.swipeLeft = function(obj){
+    console.log(obj);
+    $rootScope.selectTab(1);
+    location.href = "#/tab/contact";
+  }
 })
 
 .controller('chatController', function($scope,$rootScope,$stateParams,PersonService){
   $scope.user = PersonService.MatchUser($rootScope.items,$stateParams.username);
 })
 
-.controller('contactController', function($scope) {
+.controller('contactController', function($scope,$rootScope) {
   $scope.headList = [{
     "icon" : "ion-person-add",
     "text" : "朋友推荐讯息",
@@ -63,32 +104,38 @@ angular.module('starter.controllers', [])
     "bgColor" : {"background-color":"purple"},
     "url" : ""
   }];
-
+  //滑动
+  $scope.swipeLeft = function(){
+    $rootScope.selectTab(2);
+    location.href = "#/tab/find";
+  }
+  $scope.swipeRight = function(){
+    $rootScope.selectTab(0);
+    location.href = "#/tab/WeChat";
+  }
 })
 
-.controller('findController', function($scope) {})
+.controller('findController', function($scope,$rootScope) {
+  //滑动
+  $scope.swipeLeft = function(){
+    $rootScope.selectTab(3);
+    location.href = "#/tab/set";
+  }
+  $scope.swipeRight = function(){
+    $rootScope.selectTab(1);
+    location.href = "#/tab/contact";
+  }
+})
 
-.controller('setController', function($scope,PersonService) {
+.controller('setController', function($scope,$rootScope,PersonService) {
   PersonService.GetNewUser().then(function(items){
     $scope.user = items[0];
   });
-})
-
-.controller('contentController',function($scope,ListService){
-  $scope.backHome = function(){
-    location.href = "#/index";
-  }
-  ListService.GetList().then(function(items){
-    $scope.items = items;
-  });;
-
-  $scope.showDeleteButtons = function(){
-    if($scope.shouldShowDelete==false)$scope.shouldShowDelete = true;
-    else $scope.shouldShowDelete = false;
+  //滑动
+  $scope.swipeRight = function(){
+    $rootScope.selectTab(2);
+    location.href = "#/tab/find";
   }
 })
 
-.controller('VoiceDetailController',function($scope,$stateParams,ListService){
-  $scope.item = ListService.MatchList($stateParams.itemId);
-});
 

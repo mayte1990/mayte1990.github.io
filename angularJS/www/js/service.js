@@ -50,6 +50,47 @@ angular.module('starter.services', [])
   }
 })
 
+.factory('TabService',function(){
+  //tabs
+  // var tabs = [{
+  //   "title" : "WeChat",
+  //   "icon" : "ion-chatbubbles",
+  //   "url" : "#/tab/WeChat",
+  //   "nav" : "WeChat-tab",
+  //   "active" : "active"
+  // },{
+  //   "title" : "通讯录",
+  //   "icon" : "ion-person-stalker",
+  //   "url" : "#/tab/contact",
+  //   "nav" : "contact-tab",
+  //   "active" : ''
+  // },{
+  //   "title" : "发现",
+  //   "icon" : "ion-flash-off",
+  //   "url" : "#/tab/find",
+  //   "nav" : "find-tab",
+  //   "active" : ''
+  // },{
+  //   "title" : "设定",
+  //   "icon" : "ion-person",
+  //   "url" : "#/tab/set",
+  //   "nav" : "set-tab",
+  //   "active" : ''
+  // }];
+  return {
+  //   GetTabs : function(){
+  //     return tabs;
+  //   }
+    SelectTab : function(obj,tabs){
+      var index = obj.$index;
+      angular.forEach(tabs, function(obj) {
+        if(obj["active"] == "active"){obj["active"]='';}
+      });
+      tabs[index].active = "active";
+    }
+  }
+})
+
 .filter('genderFilter',function(){
   return function(str){
     return str === "male"?"男":"女";

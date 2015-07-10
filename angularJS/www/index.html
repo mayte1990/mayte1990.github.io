@@ -15,6 +15,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/ionic-angular.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -29,8 +30,10 @@
     <style type="text/css">
     </style>
   </head>
-  <body ng-app="starter">
-    <ion-nav-view name="home"></ion-nav-view>
+  <body ng-app="starter" no-scroll> 
+    <ion-nav-view name="home">
+        
+    </ion-nav-view>
   </body>
 </html>
 

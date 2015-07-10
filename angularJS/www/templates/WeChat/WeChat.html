@@ -10,7 +10,7 @@
   <div header value="wechat_h"></div> 
   <!--或者<header value="wechat_h" ></header>-->
 
-  <ion-content>
+  <ion-content  on-swipe-left="swipeLeft(this)">
     <ion-refresher
       pulling-text="下拉刷新..."
       on-refresh="doRefresh()">

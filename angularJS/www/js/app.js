@@ -27,6 +27,34 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
   };
 })
 
+// .directive('detectGestures', function($ionicGesture) {
+//   return {
+//     restrict :  'A',
+
+//     link : function(scope, elem, attrs) {
+//       var gestureType = attrs.gestureType;
+
+//       switch(gestureType) {
+//         case 'swipe':
+//           $ionicGesture.on('swipe', scope.reportEvent, elem);
+//           break;
+//         case 'swiperight':
+//           $ionicGesture.on('swiperight', scope.reportEvent, elem);
+//           break;
+//         case 'swipeleft':
+//           $ionicGesture.on('swipeleft', scope.reportEvent, elem);
+//           break;
+//         case 'doubletap':
+//           $ionicGesture.on('doubletap', scope.reportEvent, elem);
+//           break;
+//         case 'tap':
+//           $ionicGesture.on('tap', scope.reportEvent, elem);
+//           break;
+//       }
+//     }
+//   }
+// })
+
 .config(function($stateProvider,$urlRouterProvider,$ionicConfigProvider){
   //tabs 固定底部
   $ionicConfigProvider.platform.ios.tabs.style('standard'); 
@@ -49,17 +77,17 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
   $stateProvider
   .state("tab",{
     url : "/tab",
-    abstract: true,
+    abstract: false,
     views:{
       'home':{
-        templateUrl : "templates/tab.html"
+        templateUrl : "templates/tab.html",
       }
     }
   })
   .state("tab.WeChat",{
     url: '/WeChat',
     views: {
-      'WeChat-tab': {
+      'tab': {
         templateUrl: 'templates/WeChat/WeChat.html',
         controller: 'WeChatController'
       }
@@ -77,7 +105,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
   .state("tab.contact",{
     url: '/contact',
     views: {
-      'contact-tab': {
+      'tab': {
         templateUrl: 'templates/Contact/contact.html',
         controller: 'contactController'
       }
@@ -86,7 +114,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
   .state("tab.find",{
     url: '/find',
     views: {
-      'find-tab': {
+      'tab': {
         templateUrl: 'templates/Find/find.html',
         controller: 'findController'
       }
@@ -95,15 +123,10 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
   .state("tab.set",{
     url: '/set',
     views: {
-      'set-tab': {
+      'tab': {
         templateUrl: 'templates/Set/set.html',
         controller: 'setController'
       }
     }
-  })
-  .state("voice",{
-    url: '/voice/:itemId',
-    templateUrl : "templates/voice_detail.html",
-    controller : "VoiceDetailController"
   })
 })
