@@ -1,7 +1,7 @@
 <ion-view view-title="{{user.user.username}}">
   <ion-header-bar align-title="left" class="bar-dark">
   	<button class="button button-clear" onclick="location.href='#/tab/WeChat'">
-        <i class="icon ion-arrow-left-c"></i>
+        <i class="icon ion-arrow-left-c f24"></i>
     </button>
     <div class="h1 title">{{user.user.username}}<i class="icon ion-android-notifications-off"></i></div>
     <div class="buttons">
@@ -11,7 +11,7 @@
     </div>
   </ion-header-bar>
   <ion-content align="center" padding="10">
-    <img ng-src="{{user.user.picture.thumbnail}}" style="width:3em;height:3em;">
+    <img ng-src="{{user.user.picture.thumbnail}}" class="thum-img">
     我的邮箱是：{{user.user.email}}
   </ion-content>
   <div class="bar bar-footer bar-light" style="border-top:1px solid #ddd;">

@@ -84,6 +84,15 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
       }
     }
   })
+  .state("search",{
+    url: '/search',
+    views: {
+      'home': {
+        templateUrl: 'templates/head_footer/search.html',
+        controller: 'searchController'
+      }
+    }
+  })
   .state("tab.WeChat",{
     url: '/WeChat',
     views: {
@@ -108,6 +117,42 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
       'tab': {
         templateUrl: 'templates/Contact/contact.html',
         controller: 'contactController'
+      }
+    }
+  })
+  .state("recommend_friend",{
+    url: '/contact/recommend_friend',
+    views: {
+      'home': {
+        templateUrl: 'templates/Contact/recommend_friend.html',
+        controller: 'recommendFriendController'
+      }
+    }
+  })
+  .state("add_friend",{
+    url: '/contact/add_friend',
+    views: {
+      'home': {
+        templateUrl: 'templates/Contact/add_friend.html',
+        controller: 'addFrinedController'
+      }
+    }
+  })
+  .state("chatroom",{
+    url: '/contact/chatroom',
+    views: {
+      'home': {
+        templateUrl: 'templates/Contact/chatroom.html',
+        controller: 'chatroomController'
+      }
+    }
+  })
+  .state("new_chatroom",{
+    url: '/contact/chatroom/new_chatroom',
+    views: {
+      'home': {
+        templateUrl: 'templates/Contact/new_chatroom.html',
+        controller: 'newChatroomController'
       }
     }
   })

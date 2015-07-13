@@ -1,0 +1,38 @@
+<ion-header-bar class="bar bar-header bar-dark">
+	<h1 class="title">朋友推荐信息</h1>
+	<button class="button button-clear" ng-click="goBack()">
+		<i class="ion-arrow-left-c f24"></i>
+	</button>
+	<button class="button button-clear" ng-click="goAddFriend()">
+		<h5 class="white">新增朋友</h5>
+	</button>
+</ion-header-bar>
+<ion-content class="bg-silver">
+	<div class="list mt20">
+		<label class="item item-input" >
+		    <i class="icon ion-search placeholder-icon f24"></i>
+		    <input type="text" placeholder="WeChat ID/手机号码">
+		</label>
+		<div class="item tc">
+			<div class="dib pct50">
+				<i class="ion-iphone f40 green"></i>
+				<p>新增手机联络人</p>
+			</div>
+			<div class="dib pct50">
+				<i class="ion-social-tux f40 blue"></i>
+				<p>新增QQ好友</p>
+			</div>
+		</div>
+	</div>
+	<div>朋友推荐讯息</div>
+	<div class="list">
+		<a href="#" class="item fix" ng-repeat="item in items">
+			<img src="item.user.picture.thumbnail" class="fl thum-img"/>
+			<div class="fl">
+				<h3>{{item.user.username}}</h3>
+				<h3 class="c999">{{item.user.email}}</h3>
+			</div>
+			<button class="button button-small button-balanced dib f12 fr">接受</button>
+		</a> 
+	</div>
+</ion-content>

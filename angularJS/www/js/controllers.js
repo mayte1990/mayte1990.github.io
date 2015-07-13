@@ -34,6 +34,15 @@ angular.module('starter.controllers', [])
     });
     tabs[index].active = "active";
   }
+  $rootScope.goSearch = function(){
+    location.href='#/search'
+  }
+})
+
+.controller('searchController',function($scope,$rootScope){
+  $scope.goBack = function(){
+    window.history.go(-1);
+  }
 })
 
 .controller("WeChatController",function($scope,$rootScope,$http,$log,$ionicScrollDelegate,$ionicSideMenuDelegate,PersonService){
@@ -72,7 +81,6 @@ angular.module('starter.controllers', [])
   };
   //滑动
   $scope.swipeLeft = function(obj){
-    console.log(obj);
     $rootScope.selectTab(1);
     location.href = "#/tab/contact";
   }
@@ -81,6 +89,7 @@ angular.module('starter.controllers', [])
   $rootScope.toggleAddFlag = function(){
     $rootScope.addFlag = $rootScope.addFlag === false?true:false;
   }
+
 })
 
 .controller('chatController', function($scope,$rootScope,$stateParams,PersonService){
@@ -92,12 +101,12 @@ angular.module('starter.controllers', [])
     "icon" : "ion-person-add",
     "text" : "朋友推荐讯息",
     "bgColor" : {"background-color":"orange"},
-    "url" : ""
+    "url" : "#/contact/recommend_friend"
   },{
     "icon" : "ion-person-stalker",
     "text" : "聊天室",
     "bgColor" : {"background-color":"green"},
-    "url" : ""
+    "url" : "#/contact/chatroom"
   },{
     "icon" : "ion-ios-pricetag",
     "text" : "标签",
@@ -118,6 +127,95 @@ angular.module('starter.controllers', [])
     $rootScope.selectTab(0);
     location.href = "#/tab/WeChat";
   }
+
+})
+
+.controller('recommendFriendController',function($scope,$rootScope,PersonService){
+  $scope.goBack = function(){
+    window.history.go(-1);
+  }
+  $scope.goAddFriend = function(){
+    location.href="#/contact/add_friend";
+  }
+  //初始化第一个方法-记录10条
+  PersonService.GetFeed().then(function(items){
+    $scope.items = items;
+  });
+})
+
+.controller('addFrinedController',function($scope,$rootScope,PersonService){
+  $scope.goBack = function(){
+    window.history.go(-1);
+  }
+  //初始化
+  PersonService.GetNewUser().then(function(item){
+    $scope.user = item[0];
+  });
+
+  $scope.FriendList = [{
+    "icon" : "ion-ionic",
+    "text" : "朋友探测器",
+    "subText" : "快速新增身边的人为朋友",
+    "bgColor" : {"background-color":"blue"},
+    "url" : ""
+  },{
+    "icon" : "ion-person-stalker",
+    "text" : "加入私密群组",
+    "subText" : "与身边的朋友进入同一个聊天室",
+    "bgColor" : {"background-color":"green"},
+    "url" : ""
+  },{
+    "icon" : "ion-qr-scanner",
+    "text" : "扫描QR Code",
+    "subText" : "扫描QR Code卡片",
+    "bgColor" : {"background-color":"blue"},
+    "url" : ""
+  },{
+    "icon" : "ion-ios-personadd",
+    "text" : "QQ/LinkedIn/手机联络人",
+    "subText" : "快速新增身边的人为朋友",
+    "bgColor" : {"background-color":"orange"},
+    "url" : ""
+  },{
+    "icon" : "ion-ios-people",
+    "text" : "官方账号",
+    "subText" : "获取更多的咨询和服务",
+    "bgColor" : {"background-color":"blue"},
+    "url" : ""
+  }];
+
+})
+
+.controller('chatroomController',function($scope,PersonService){
+  $scope.flag = true;
+  $scope.toggleFlag = function(){
+    $scope.flag = $scope.flag==false?true:false;
+  };
+  $scope.goBack = function(){
+    window.history.go(-1);
+  }
+  $scope.goAddChatroom = function(){
+    location.href = "#/contact/chatroom/new_chatroom";
+  }
+  //初始化第一个方法-记录10条
+  PersonService.GetFeed().then(function(items){
+    $scope.items = items;
+  });
+})
+
+.controller('newChatroomController',function($scope,PersonService){
+  $scope.goBack = function(){
+    window.history.go(-1);
+  }
+  //初始化第一个方法-记录10条
+  PersonService.GetFeed().then(function(items){
+    $scope.items = items;
+  });
+
+  $scope.a = function(){
+    var checkboxList = angular.element("input[nane='chat']");
+    console.log(checkboxList);
+  }
 })
 
 .controller('findController', function($scope,$rootScope) {
@@ -130,6 +228,7 @@ angular.module('starter.controllers', [])
     $rootScope.selectTab(1);
     location.href = "#/tab/contact";
   }
+
 })
 
 .controller('setController', function($scope,$rootScope,PersonService) {
@@ -141,6 +240,7 @@ angular.module('starter.controllers', [])
     $rootScope.selectTab(2);
     location.href = "#/tab/find";
   }
+
 })
 
 

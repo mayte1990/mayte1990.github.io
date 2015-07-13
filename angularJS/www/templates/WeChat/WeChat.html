@@ -20,7 +20,7 @@
           can-swipe="listCanSwipe">
       <ion-item class="item-avatar" ng-repeat="item in items" href="#/tab/chat/{{item.user.username}}">
         <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-        <img src="{{item.user.picture.large}}" />
+        <img src="{{item.user.picture.large}}" class="thum-img"/>
         <div class="fix"><div class="fl txtof">{{item.user.email}} </div><div class="fr">{{item.user.gender | genderFilter}} </div></div>
         <p>{{item.user.username}} </p>
         <ion-reorder-button class="ion-navicon"

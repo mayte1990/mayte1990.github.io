@@ -1,0 +1,34 @@
+<!--头部一-->
+<ion-header-bar class="bar-dark" align-title="left" ng-show="{{flag}}">
+	<button class="button button-clear" ng-click="goBack()">
+		<i class="ion-arrow-left-c f24"></i>
+	</button>
+	<h1 class="title">聊天室</h1>
+	<div class="buttons">
+		<button class="button button-clear mr1em" ng-click="toggleFlag()">
+			<i class="ion-search f24 mr10"></i>
+		</button>
+		<button class="button button-clear" ng-click="goAddChatroom()"><i class="ion-plus f24"></i></button>
+	</div>
+</ion-header-bar>
+<!--头部二-->
+<ion-header-bar class="bar-dark"  ng-if="flag!=true">
+	<button class="button button-clear" ng-click="toggleFlag()">
+		<i class="ion-arrow-left-c f24"></i>
+	</button>
+	<label class="item-input-wrapper">
+	    <i class="icon ion-ios-search placeholder-icon"></i>
+	    <input type="search" placeholder="Search" style="width:100%;background:transparent;">
+	</label>
+</ion-header-bar>
+<ion-content class="bg-silver">
+	<div class="p5">聊天室</div>
+	<div class="list">
+		<a href="#" class="item" ng-repeat="item in items">
+			<img src="item.user.picture.thumbnail" class="vm thum-img"/>
+			<div class="dib vm">
+				<h3>{{item.user.username}}</h3>
+			</div>
+		</a> 
+	</div>
+</ion-content>

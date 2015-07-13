@@ -3,8 +3,7 @@
 	<div class="tabs tabs-dark tabs-bottom">
 		<a class="tab-item {{tab.active}}" ng-repeat="tab in tabs" ng-click="selectTab(this.$index)" title="{{tab.title}}" icon="icon {{tab.icon}}" href="{{tab.url}}">
 		  <!--标签 1 内容-->
-		  <i class="{{tab.icon}}"></i>
-		  {{tab.title}}
+		  	<i class="{{tab.icon}}">{{tab.title}}</i>
 		</a>
 
 		<!-- <ion-tab title="WeChat" icon="ion-chatbubbles" href="#/tab/WeChat">

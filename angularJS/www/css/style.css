@@ -1,5 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .icon-css{margin-right:1em;padding:5px 8px;}
-.thum-img{width:3em;height:3em;}
+.thum-img{width:3em;height:3em;margin:0 5px;}
 a,a:hover,a:active{text-decoration: none;}
 .rt_pos{position: absolute;right: 1%;top:40px;}
+.mr1em{margin-right:1em;}
