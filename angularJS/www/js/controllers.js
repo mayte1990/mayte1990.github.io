@@ -212,9 +212,19 @@ angular.module('starter.controllers', [])
     $scope.items = items;
   });
 
+  
   $scope.a = function(){
-    var checkboxList = angular.element("input[nane='chat']");
-    console.log(checkboxList);
+    var checkboxList = document.getElementsByTagName("input"),arr = [];
+    angular.forEach(checkboxList,function(obj){
+      if(obj.type == "checkbox"){
+        if(obj.checked){
+          arr.push(angular.element(obj).parent().parent().text().trim());
+        }
+      }
+    });
+    document.getElementById('search_input').value = arr.toString();
+    if(arr.length!=0){angular.element(document.getElementById('comfirmBtn')).removeAttr("disabled");}
+    else{angular.element(document.getElementById('comfirmBtn')).attr("disabled","disabled");}
   }
 })
 

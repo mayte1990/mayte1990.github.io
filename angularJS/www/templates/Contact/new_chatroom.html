@@ -1,29 +1,27 @@
+<form name="myForm">
 <ion-header-bar class="bar-dark" align-title="left">
 	<button class="button button-clear" ng-click="goBack()">
 		<i class="ion-arrow-left-c f24"></i>
 	</button>
-	<h1 class="title">建立聊天室{{aa}}</h1>
-	<button class="button button-balanced" ng-disabled="true">
+	<h1 class="title">建立聊天室</h1>
+	<button class="button button-balanced" ng-disabled="true" id="comfirmBtn">
 		确定
 	</button>
 </ion-header-bar>
 <ion-content class="bg-999">
-	<form name="myForm">
 		<div class="list">
-				<!-- <i class="ion-search f30 vm c999"></i>
-				<input type="text" style="width:80%;display:inline-block;padding-left:1em;background:transparent;color:#999;font-size:1em;" placeholder="搜寻"/> -->
 			<label class="item item-input" style="padding:8px 16px;">
 			    <i class="icon ion-search placeholder-icon"></i>
-			    <input type="text" placeholder="搜寻">
+			    <input type="text" placeholder="搜寻" id="search_input">
 			</label>
 			<a href="#" class="item">选择聊天室</a>
-			<a href="#" class="item">加入私密群组</a>
-			<ion-checkbox class="item fix" ng-repeat="item in items" name="chat" ng-change="a()" ng-model="aa">
+			<a href="#" class="item">加入私密群组{{myForm.chat}}</a>
+			<ion-checkbox class="item fix" ng-repeat="item in items" name="chat" ng-click="a()">
 				<img src="{{item.user.picture.thumbnail}}" class="fl thum-img" style="width:2em;height:2em;"/>
 				<div class="fl">
 					<h3>{{item.user.username}}</h3>
 				</div>
 			</ion-checkbox>
 		</div>
-	</form>
 </ion-content>
+</form>
